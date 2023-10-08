@@ -38,7 +38,7 @@ from homeassistant.helpers.event import (
     EventStateChangedData,
     async_track_state_change_event,
 )
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType, EventType
+from homeassistant.helpers.typing import ConfigType,EventType
 
 from .const import (
     CONF_ROUND_DIGITS,
@@ -188,10 +188,8 @@ async def async_setup_entry(
 
 
 async def async_setup_platform(
-    hass: HomeAssistant,
     config: ConfigType,
     async_add_entities: AddEntitiesCallback,
-    discovery_info: DiscoveryInfoType | None = None,
 ) -> None:
     """Set up the integration sensor."""
     integral = IntegrationSensor(
