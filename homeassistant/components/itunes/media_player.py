@@ -17,7 +17,7 @@ from homeassistant.const import CONF_HOST, CONF_NAME, CONF_PORT, CONF_SSL
 from homeassistant.core import HomeAssistant
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from homeassistant.helpers.typing import ConfigType
 
 DEFAULT_NAME = "iTunes"
 DEFAULT_PORT = 8181
@@ -161,10 +161,8 @@ class Itunes:
 
 
 def setup_platform(
-    hass: HomeAssistant,
     config: ConfigType,
     add_entities: AddEntitiesCallback,
-    discovery_info: DiscoveryInfoType | None = None,
 ) -> None:
     """Set up the iTunes platform."""
     add_entities(
